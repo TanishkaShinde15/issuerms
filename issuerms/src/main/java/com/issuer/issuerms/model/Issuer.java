@@ -16,7 +16,7 @@ public class Issuer {
 	private String custId;
 	
 	@Column
-	private String noOfCopiesNote;
+	private Integer noOfCopiesNote;
 
 	public String getIsbn() {
 		return isbn;
@@ -34,11 +34,11 @@ public class Issuer {
 		this.custId = custId;
 	}
 
-	public String getNoOfCopiesNote() {
+	public Integer getNoOfCopiesNote() {
 		return noOfCopiesNote;
 	}
 
-	public void setNoOfCopiesNote(String noOfCopiesNote) {
+	public void setNoOfCopiesNote(Integer noOfCopiesNote) {
 		this.noOfCopiesNote = noOfCopiesNote;
 	}
 	
