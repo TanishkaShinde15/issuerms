@@ -22,10 +22,10 @@ public class Book  {
 	private String publishedDate;
 	
 	
-	private String totalCopies;
+	private Integer totalCopies;
 	
 
-	private String issuedCopies;
+	private Integer issuedCopies;
 	
 	
 	private String author;
@@ -34,8 +34,8 @@ public class Book  {
 		
 	}
 	
-	@JsonCreator
-	public Book(String isbn, String title, String publishedDate, String totalCopies, String issuedCopies,
+
+	public Book(String isbn, String title, String publishedDate, Integer totalCopies, Integer issuedCopies,
 			String author) {
 		super();
 		this.isbn = isbn;
@@ -70,19 +70,19 @@ public class Book  {
 		this.publishedDate = publishedDate;
 	}
 
-	public String getTotalCopies() {
+	public Integer getTotalCopies() {
 		return totalCopies;
 	}
 
-	public void setTotalCopies(String totalCopies) {
+	public void setTotalCopies(Integer totalCopies) {
 		this.totalCopies = totalCopies;
 	}
 
-	public String getIssuedCopies() {
+	public Integer getIssuedCopies() {
 		return issuedCopies;
 	}
 
-	public void setIssuedCopies(String issuedCopies) {
+	public void setIssuedCopies(Integer issuedCopies) {
 		this.issuedCopies = issuedCopies;
 	}
 

@@ -85,16 +85,31 @@ public class IssuerController {
 		
 		String str=null;
 		JsonNode node=null;
-		
+		Book book;
 		
 		str= webClientBuilder.build().get().uri("http://localhost:8081/fetchSingleRecord/ISBN 24688")
 				.retrieve().bodyToMono(String.class).block();
 		
-		
-		JSONArray jo=new JSONArray(str);
+		//Integer availableCopies=Integer.parseInt(book.getTotalCopies())-Integer.parseInt(book.getIssuedCopies());
+		//JSONArray jo=new JSONArray(str);
 		 
-		 System.out.println(jo.toString());
-		return jo.toString();
+		// System.out.println(availableCopies);
+		
+		
+		ObjectMapper objectMapper=new ObjectMapper();
+		
+		try {
+			book=objectMapper.readValue(str, Book.class);
+			System.out.println(book);
+			System.out.println(book.getTotalCopies()-book.getIssuedCopies());
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return str;
 		
 	}
 
